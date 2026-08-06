@@ -4,3 +4,8 @@ Time box: 2h.
 
 Provide `signature.json` with `data_sha256` matching sha256 of `data.bin`,
 and `env` string non-empty. Grader recomputes the hash.
+
+## Common fail
+
+Hand-editing `data_sha256` to a guessed hex string fails: the grader hashes
+`data.bin` itself. An empty `env` also fails even when the hash is correct.
