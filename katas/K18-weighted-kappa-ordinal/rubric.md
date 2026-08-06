@@ -1,0 +1,1 @@
+Use linear weights on sorted unique labels.

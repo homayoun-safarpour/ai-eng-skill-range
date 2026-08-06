@@ -1,0 +1,1 @@
+Human: signature must fail if data.bin bytes change.

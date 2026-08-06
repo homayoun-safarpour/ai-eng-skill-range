@@ -1,0 +1,1 @@
+All required phrases must appear.

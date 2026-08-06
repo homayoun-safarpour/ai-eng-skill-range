@@ -1,0 +1,1 @@
+Human: ranking is ordered doc ids; relevant is a set.

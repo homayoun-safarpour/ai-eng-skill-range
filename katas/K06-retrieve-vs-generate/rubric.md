@@ -1,0 +1,1 @@
+If relevant not in retrieved -> retrieval; else if hallucination -> generation; else ok.

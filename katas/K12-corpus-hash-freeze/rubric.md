@@ -1,0 +1,1 @@
+Any corpus edit without baseline update must fail.

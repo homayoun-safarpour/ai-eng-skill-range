@@ -1,0 +1,1 @@
+Human: gate must not exit 1 for ordinary fail; use 2.

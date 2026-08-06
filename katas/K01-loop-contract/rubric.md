@@ -1,0 +1,1 @@
+Human: confirm each section has a concrete, machine-checkable note.

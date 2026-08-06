@@ -1,0 +1,1 @@
+Empty answer -> 1.0; tokens not in context lower the score.

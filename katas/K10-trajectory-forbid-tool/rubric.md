@@ -1,0 +1,1 @@
+True iff any event tool is in forbidden set.

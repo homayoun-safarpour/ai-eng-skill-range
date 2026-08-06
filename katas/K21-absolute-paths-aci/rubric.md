@@ -1,0 +1,1 @@
+Relative paths must be rejected.
