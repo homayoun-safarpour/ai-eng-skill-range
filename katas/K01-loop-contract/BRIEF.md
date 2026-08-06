@@ -28,3 +28,7 @@ Goal = green CI on `main` for the named workflow; max 8 ticks; stop after
 ### 5. Irreversible
 `gh workflow run` against production deploy workflows and any `git push --force`
 need an explicit human yes in the state file.
+
+## Common fail
+
+Skipping a numbered heading or filling with HTML comments only fails the grader. All five decision headings need real content.
