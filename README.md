@@ -9,6 +9,7 @@
 
 
 Each kata BRIEF includes a **Common fail** note so graders stay sharp when someone takes the short path.
+
 ## Use this when
 
 | Situation | Use this? |
