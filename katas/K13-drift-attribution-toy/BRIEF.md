@@ -15,4 +15,4 @@ Checking live_moved before kappa drop fails. JUDGE_DRIFT wins when kappa falls b
 verdict(0.80, 0.50, live_moved=True, drop=0.1)  # JUDGE_DRIFT (kappa drop wins)
 verdict(0.80, 0.78, live_moved=True, drop=0.1)  # SYSTEM_CHANGE
 verdict(0.80, 0.79, live_moved=False, drop=0.1) # STABLE
-```n
+```
