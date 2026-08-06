@@ -7,6 +7,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Progress](https://img.shields.io/badge/katas-24%2F24-green)
 
+
+Each kata BRIEF includes a **Common fail** note so graders stay sharp when someone takes the short path.
 ## Use this when
 
 | Situation | Use this? |
