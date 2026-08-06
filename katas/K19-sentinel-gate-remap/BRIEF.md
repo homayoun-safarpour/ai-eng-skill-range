@@ -1,4 +1,4 @@
-# K19 — Sentinel gate remap
+# K19 : Sentinel gate remap
 
 Time box: 1–2h.
 

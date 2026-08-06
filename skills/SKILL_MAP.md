@@ -1,11 +1,11 @@
-# Skill map — 56 nodes (7 clusters × 8)
+# Skill map : 56 nodes (7 clusters × 8)
 
 Each skill is a named capability. Graded katas reference skill IDs in `SKILL.md`.
 Progress: graded katas prove skills under a frozen grader (exit 0/2).
 
 Interview-core path uses katas **K01–K16**. Specialty depth uses **K17–K24**.
 
-## C1 — Production Python and CI hygiene
+## C1 : Production Python and CI hygiene
 
 | ID | Skill |
 | --- | --- |
@@ -18,7 +18,7 @@ Interview-core path uses katas **K01–K16**. Specialty depth uses **K17–K24**
 | C1.S7 | Fail CI when required headings or files are missing |
 | C1.S8 | Pin dependencies or document lockfile discipline |
 
-## C2 — ML and reproducibility basics
+## C2 : ML and reproducibility basics
 
 | ID | Skill |
 | --- | --- |
@@ -31,7 +31,7 @@ Interview-core path uses katas **K01–K16**. Specialty depth uses **K17–K24**
 | C2.S7 | Separate training code hash from model weights |
 | C2.S8 | Document what a signature does and does not prove |
 
-## C3 — LLM app patterns
+## C3 : LLM app patterns
 
 | ID | Skill |
 | --- | --- |
@@ -44,7 +44,7 @@ Interview-core path uses katas **K01–K16**. Specialty depth uses **K17–K24**
 | C3.S7 | Require absolute paths in file tools |
 | C3.S8 | Define irreversible actions needing human approval |
 
-## C4 — RAG reliability
+## C4 : RAG reliability
 
 | ID | Skill |
 | --- | --- |
@@ -57,7 +57,7 @@ Interview-core path uses katas **K01–K16**. Specialty depth uses **K17–K24**
 | C4.S7 | Fail closed when corpus hash drifts |
 | C4.S8 | Report honest limits of lexical judges |
 
-## C5 — Agents and loops
+## C5 : Agents and loops
 
 | ID | Skill |
 | --- | --- |
@@ -70,7 +70,7 @@ Interview-core path uses katas **K01–K16**. Specialty depth uses **K17–K24**
 | C5.S7 | Cap cost or token budget per run |
 | C5.S8 | Journal one bounded action per tick |
 
-## C6 — Eval and judges
+## C6 : Eval and judges
 
 | ID | Skill |
 | --- | --- |
@@ -83,7 +83,7 @@ Interview-core path uses katas **K01–K16**. Specialty depth uses **K17–K24**
 | C6.S7 | Build a tiny golden set before changing prompts |
 | C6.S8 | Calibrate an automated grader against human labels |
 
-## C7 — Harness, safety, and cost
+## C7 : Harness, safety, and cost
 
 | ID | Skill |
 | --- | --- |

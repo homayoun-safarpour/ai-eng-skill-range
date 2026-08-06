@@ -1,4 +1,4 @@
-# K12 — Corpus hash freeze
+# K12 : Corpus hash freeze
 
 Time box: 1–2h.
 

@@ -1,4 +1,4 @@
-# K24 — Composite multi-failure
+# K24 : Composite multi-failure
 
 Time box: 2h.
 

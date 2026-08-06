@@ -1,11 +1,11 @@
-# K01 — Loop Contract
+# K01 : Loop Contract
 
 Time box: 1–2h.
 
 Fill `LOOP_CONTRACT.md` with the five required decision headings used before
 automating an agent loop. Empty headings fail the grader.
 
-## Example fill — CI triage loop
+## Example fill : CI triage loop
 
 Use this as a worked shape for a **CI triage** loop (synthetic; no secrets, no
 private tokens). Copy the structure into your submission; change the details to

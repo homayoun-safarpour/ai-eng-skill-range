@@ -1,4 +1,4 @@
-# K22 — Offline lexical judge
+# K22 : Offline lexical judge
 
 Time box: 2h.
 

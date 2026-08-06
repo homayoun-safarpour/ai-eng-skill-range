@@ -1,4 +1,4 @@
-# K06 — Retrieve vs generate failure
+# K06 : Retrieve vs generate failure
 
 Time box: 1–2h.
 

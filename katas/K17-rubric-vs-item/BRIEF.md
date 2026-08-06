@@ -1,4 +1,4 @@
-# K17 — Rubric vs item ambiguity
+# K17 : Rubric vs item ambiguity
 
 Time box: 2h.
 

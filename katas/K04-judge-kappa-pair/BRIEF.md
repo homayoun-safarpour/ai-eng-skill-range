@@ -1,4 +1,4 @@
-# K04 — Cohen kappa for two raters
+# K04 : Cohen kappa for two raters
 
 Time box: 2h.
 

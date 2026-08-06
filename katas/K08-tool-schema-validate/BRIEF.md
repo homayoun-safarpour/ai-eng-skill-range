@@ -1,4 +1,4 @@
-# K08 — Tool schema validate
+# K08 : Tool schema validate
 
 Time box: 2h.
 

@@ -1,4 +1,4 @@
-# K18 — Weighted kappa (ordinal)
+# K18 : Weighted kappa (ordinal)
 
 Time box: 3h.
 

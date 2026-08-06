@@ -1,4 +1,4 @@
-# K10 — Forbidden tool in trajectory
+# K10 : Forbidden tool in trajectory
 
 Time box: 1–2h.
 

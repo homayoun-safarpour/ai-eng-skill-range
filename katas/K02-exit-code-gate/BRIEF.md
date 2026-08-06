@@ -1,4 +1,4 @@
-# K02 — Exit-code gate
+# K02 : Exit-code gate
 
 Time box: 1–2h.
 

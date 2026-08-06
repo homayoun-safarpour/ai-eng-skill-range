@@ -1,4 +1,4 @@
-# K20 — Tick policy repair-before-advance
+# K20 : Tick policy repair-before-advance
 
 Time box: 2h.
 

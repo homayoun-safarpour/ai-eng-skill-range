@@ -1,4 +1,4 @@
-# K15 — Cost budget cap
+# K15 : Cost budget cap
 
 Time box: 1–2h.
 

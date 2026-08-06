@@ -1,4 +1,4 @@
-# K03 — Repro signature (lite)
+# K03 : Repro signature (lite)
 
 Time box: 2h.
 

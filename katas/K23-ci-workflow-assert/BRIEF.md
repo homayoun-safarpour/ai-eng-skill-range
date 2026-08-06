@@ -1,4 +1,4 @@
-# K23 — CI workflow assert
+# K23 : CI workflow assert
 
 Time box: 1h.
 

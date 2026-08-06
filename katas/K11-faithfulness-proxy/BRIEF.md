@@ -1,4 +1,4 @@
-# K11 — Offline faithfulness proxy
+# K11 : Offline faithfulness proxy
 
 Time box: 2h.
 

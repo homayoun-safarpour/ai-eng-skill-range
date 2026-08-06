@@ -1,4 +1,4 @@
-# K21 — Absolute paths ACI
+# K21 : Absolute paths ACI
 
 Time box: 1h.
 

@@ -1,4 +1,4 @@
-# K09 — Structured tool result
+# K09 : Structured tool result
 
 Time box: 1–2h.
 

@@ -1,4 +1,4 @@
-# K14 — Journal append-only
+# K14 : Journal append-only
 
 Time box: 1h.
 

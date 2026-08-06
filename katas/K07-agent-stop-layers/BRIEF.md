@@ -1,4 +1,4 @@
-# K07 — Stop layers on disk
+# K07 : Stop layers on disk
 
 Time box: 1h.
 

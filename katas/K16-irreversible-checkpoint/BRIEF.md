@@ -1,4 +1,4 @@
-# K16 — Irreversible checkpoint
+# K16 : Irreversible checkpoint
 
 Time box: 1h.
 
