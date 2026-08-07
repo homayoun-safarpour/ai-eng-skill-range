@@ -8,3 +8,13 @@ Need at least two entries.
 ## Common fail
 
 human_required false, or fewer than two entries, fails. Every listed action needs human_required true.
+
+## Example fill
+
+`json
+[
+  {name: force-push, human_required: true},
+  {name: production-deploy, human_required: true}
+]
+`
+
