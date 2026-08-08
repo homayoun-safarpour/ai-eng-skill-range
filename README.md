@@ -43,6 +43,7 @@ Worked path: [examples/](examples/).
 - Interview-core katas: **K01-K16**
 - Specialty (eval/trust/harness depth): **K17-K24**
 - Companion contract guide: [agent-loop-field-guide](https://github.com/homayoun-safarpour/agent-loop-field-guide)
+- Judge ecosystem map: [judge-field-guide](https://github.com/homayoun-safarpour/judge-field-guide)
 
 ## How grading works
 
