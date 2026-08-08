@@ -7,3 +7,7 @@ Five CLI-backed points for a technical screen (no resume recap).
 - **`skillrange grade K01 --submission katas/K01-loop-contract/fixtures/pass`** : reference pass exits **0**; CI dogfoods the same pair on every kata (`fixtures/fail` must stay **2**).
 - **`skillrange grade K05-rag-hitk-gate --submission <your_dir>`** : offline retrieval metric kata; no API key, only files under `--submission`.
 - **`skillrange grade K02-exit-code-gate --submission katas/K02-exit-code-gate/fixtures/pass`** : encodes the stack-wide rule that gates speak exit codes (0 pass, 2 fail), matching trace-gate, rag-eval, and drift-sentinel contracts.
+## Related instruments
+
+- [judge-field-guide](https://github.com/homayoun-safarpour/judge-field-guide) - CI-tested map of the LLM-judge ecosystem
+- [agent-loop-field-guide](https://github.com/homayoun-safarpour/agent-loop-field-guide) - Loop Contract before you automate
