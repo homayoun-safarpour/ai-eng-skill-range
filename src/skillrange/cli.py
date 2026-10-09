@@ -50,14 +50,17 @@ def load_grade_fn(kata_path: Path):
     return mod.grade
 
 
-def grade_kata(kata_id: str, submission: Path | None = None) -> int:
+def grade_kata(kata_id: str, submission: Path | None = None, strict: bool = False) -> int:
     kata = find_kata(kata_id)
     grade = load_grade_fn(kata)
     sub = submission if submission is not None else kata / "starter"
     if not sub.exists():
         print(f"FAIL: submission path missing: {sub}", file=sys.stderr)
         return 2
-    code = int(grade(Path(sub)))
+    if strict and kata.name.split("-", 1)[0] != "K01":
+        print("FAIL: --strict is supported only for K01", file=sys.stderr)
+        return 2
+    code = int(grade(Path(sub), strict=True) if strict else grade(Path(sub)))
     if code not in (0, 2):
         print(f"FAIL: grader returned {code}; only 0 or 2 allowed", file=sys.stderr)
         return 2
@@ -82,13 +85,14 @@ def main(argv: list[str] | None = None) -> int:
         help="Path to submission directory (default: kata starter/)",
     )
     p_grade.set_defaults(fn="grade")
+    p_grade.add_argument("--strict", action="store_true", help="Require non-comment section content (K01 only)")
 
     args = parser.parse_args(argv)
     if args.fn == "list":
         for path in list_katas():
             print(path.name)
         return 0
-    return grade_kata(args.kata_id, args.submission)
+    return grade_kata(args.kata_id, args.submission, strict=args.strict)
 
 
 if __name__ == "__main__":
