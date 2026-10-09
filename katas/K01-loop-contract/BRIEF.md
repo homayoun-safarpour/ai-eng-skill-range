@@ -3,7 +3,10 @@
 Time box: 1–2h.
 
 Fill `LOOP_CONTRACT.md` with the five required decision headings used before
-automating an agent loop. Empty headings fail the grader.
+automating an agent loop. The default grader checks heading presence only.
+Use `skillrange grade K01 --submission <directory> --strict` to require
+non-comment content in each section. Empty sections and HTML-comment-only
+sections fail strict grading with exit 2; the existing default is unchanged.
 
 ## Example fill : CI triage loop
 
@@ -31,4 +34,6 @@ need an explicit human yes in the state file.
 
 ## Common fail
 
-Skipping a numbered heading or filling with HTML comments only fails the grader. All five decision headings need real content.
+Skipping a numbered heading fails either mode. Filling a section with HTML
+comments only fails strict mode. All five decision headings need real content
+to pass strict grading.
