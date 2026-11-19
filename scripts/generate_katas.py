@@ -47,7 +47,7 @@ def main() -> None:
         "loop-contract",
         "- C5.S1\n- C5.S2\n- C1.S7",
         """
-        # K01 — Loop Contract
+        # K01: Loop Contract
 
         Time box: 1–2h.
 
@@ -103,7 +103,7 @@ def main() -> None:
         "exit-code-gate",
         "- C1.S4\n- C5.S6",
         """
-        # K02 — Exit-code gate
+        # K02: Exit-code gate
 
         Time box: 1–2h.
 
@@ -167,7 +167,7 @@ def main() -> None:
         "repro-signature-lite",
         "- C2.S1\n- C2.S2\n- C2.S8",
         """
-        # K03 — Repro signature (lite)
+        # K03: Repro signature (lite)
 
         Time box: 2h.
 
@@ -221,7 +221,7 @@ def main() -> None:
         "judge-kappa-pair",
         "- C6.S1\n- C6.S2",
         """
-        # K04 — Cohen kappa for two raters
+        # K04: Cohen kappa for two raters
 
         Time box: 2h.
 
@@ -295,7 +295,7 @@ def _rest_specs() -> list[dict]:
             kid="K05",
             slug="rag-hitk-gate",
             skills="- C4.S1\n- C4.S2",
-            brief="# K05 — hit@k / MRR gate\n\nTime box: 2–3h.\n\nImplement `metrics.py` with `hit_at_k(ranking, relevant, k)` and `mrr(ranking, relevant)`.\n",
+            brief="# K05, hit@k / MRR gate\n\nTime box: 2–3h.\n\nImplement `metrics.py` with `hit_at_k(ranking, relevant, k)` and `mrr(ranking, relevant)`.\n",
             rubric="Human: ranking is ordered doc ids; relevant is a set.",
             starter_files={
                 "metrics.py": "def hit_at_k(ranking, relevant, k):\n    return 0.0\n\ndef mrr(ranking, relevant):\n    return 0.0\n"
@@ -350,7 +350,7 @@ def _rest_specs() -> list[dict]:
             kid="K06",
             slug="retrieve-vs-generate",
             skills="- C4.S4",
-            brief="# K06 — Retrieve vs generate failure\n\nTime box: 1–2h.\n\nWrite `diagnose.py` with `diagnose(retrieved_ids, relevant_ids, answer_has_hallucination: bool) -> str` returning `retrieval` | `generation` | `ok`.\n",
+            brief="# K06: Retrieve vs generate failure\n\nTime box: 1–2h.\n\nWrite `diagnose.py` with `diagnose(retrieved_ids, relevant_ids, answer_has_hallucination: bool) -> str` returning `retrieval` | `generation`  | `ok`.\n",
             rubric="If relevant not in retrieved -> retrieval; else if hallucination -> generation; else ok.",
             starter_files={"diagnose.py": "def diagnose(retrieved_ids, relevant_ids, answer_has_hallucination):\n    return 'ok'\n"},
             fail_files={"diagnose.py": "def diagnose(retrieved_ids, relevant_ids, answer_has_hallucination):\n    return 'ok'\n"},
@@ -394,7 +394,7 @@ def _rest_specs() -> list[dict]:
             kid="K07",
             slug="agent-stop-layers",
             skills="- C5.S4\n- C5.S5",
-            brief="# K07 — Stop layers on disk\n\nTime box: 1h.\n\nProvide `stop_layers.json` with keys goal, max_turns, budget, no_progress (all non-empty strings).\n",
+            brief="# K07, Stop layers on disk\n\nTime box: 1h.\n\nProvide `stop_layers.json` with keys goal, max_turns, budget, no_progress (all non-empty strings).\n",
             rubric="All four layers present.",
             starter_files={"stop_layers.json": _json.dumps({"goal": ""})},
             fail_files={"stop_layers.json": _json.dumps({"goal": "x"})},
@@ -432,7 +432,7 @@ def _rest_specs() -> list[dict]:
             kid="K08",
             slug="tool-schema-validate",
             skills="- C3.S1\n- C3.S2",
-            brief="# K08 — Tool schema validate\n\nTime box: 2h.\n\nImplement `validate.py` with `validate_tool(call: dict, schema: dict) -> bool`.\nSchema: `{\"name\": str, \"required\": [str]}`. Call must match name and include required args keys.\n",
+            brief="# K08, Tool schema validate\n\nTime box: 2h.\n\nImplement `validate.py` with `validate_tool(call: dict, schema: dict) -> bool`.\nSchema: `{\"name\": str, \"required\": [str]}`. Call must match name and include required args keys.\n",
             rubric="Wrong name or missing required arg -> False.",
             starter_files={"validate.py": "def validate_tool(call, schema):\n    return True\n"},
             fail_files={"validate.py": "def validate_tool(call, schema):\n    return True\n"},
@@ -487,7 +487,7 @@ def _k09_k24() -> list[dict]:
             kid="K09",
             slug="structured-tool-result",
             skills="- C3.S1\n- C3.S5",
-            brief="# K09 — Structured tool result\n\nTime box: 1–2h.\n\nWrite `result.json` with keys tool, args_hash, status where status is ok|error.\n",
+            brief="# K09: Structured tool result\n\nTime box: 1–2h.\n\nWrite `result.json` with keys tool, args_hash, status where status is ok |error.\n",
             rubric="All keys present; status enumerated.",
             starter_files={"result.json": "{}"},
             fail_files={"result.json": _json.dumps({"tool": "x"})},
@@ -519,7 +519,7 @@ def _k09_k24() -> list[dict]:
             kid="K10",
             slug="trajectory-forbid-tool",
             skills="- C7.S4",
-            brief="# K10 — Forbidden tool in trajectory\n\nTime box: 1–2h.\n\nImplement `check.py` with `has_forbidden(events, forbidden) -> bool`.\nEvents are list of `{tool: str}`.\n",
+            brief="# K10, Forbidden tool in trajectory\n\nTime box: 1–2h.\n\nImplement `check.py` with `has_forbidden(events, forbidden) -> bool`.\nEvents are list of `{tool: str}`.\n",
             rubric="True iff any event tool is in forbidden set.",
             starter_files={"check.py": "def has_forbidden(events, forbidden):\n    return False\n"},
             fail_files={"check.py": "def has_forbidden(events, forbidden):\n    return False\n"},
@@ -557,7 +557,7 @@ def _k09_k24() -> list[dict]:
             kid="K11",
             slug="faithfulness-proxy",
             skills="- C4.S5\n- C4.S8",
-            brief="# K11 — Offline faithfulness proxy\n\nTime box: 2h.\n\nImplement `faithfulness.py` with `score(answer: str, context: str) -> float` in [0,1]: fraction of answer tokens (whitespace) that appear in context (casefold).\n",
+            brief="# K11, Offline faithfulness proxy\n\nTime box: 2h.\n\nImplement `faithfulness.py` with `score(answer: str, context: str) -> float` in [0,1]: fraction of answer tokens (whitespace) that appear in context (casefold).\n",
             rubric="Empty answer -> 1.0; tokens not in context lower the score.",
             starter_files={"faithfulness.py": "def score(answer, context):\n    return 0.0\n"},
             fail_files={"faithfulness.py": "def score(answer, context):\n    return 0.0\n"},
@@ -597,7 +597,7 @@ def _k09_k24() -> list[dict]:
             kid="K12",
             slug="corpus-hash-freeze",
             skills="- C4.S3\n- C4.S7",
-            brief="# K12 — Corpus hash freeze\n\nTime box: 1–2h.\n\nProvide `baseline.json` with `corpus_sha256` matching sha256 of `corpus.txt`.\n",
+            brief="# K12, Corpus hash freeze\n\nTime box: 1–2h.\n\nProvide `baseline.json` with `corpus_sha256` matching sha256 of `corpus.txt`.\n",
             rubric="Any corpus edit without baseline update must fail.",
             starter_files={"corpus.txt": "hello", "baseline.json": "{}"},
             fail_files={
@@ -637,7 +637,7 @@ def _k09_k24() -> list[dict]:
             kid="K13",
             slug="drift-attribution-toy",
             skills="- C6.S5\n- C6.S6",
-            brief="# K13 — Drift attribution toy\n\nTime box: 2h.\n\nImplement `attr.py` with `verdict(base_kappa, cur_kappa, live_moved: bool, drop=0.1) -> str`:\nJUDGE_DRIFT if kappa dropped by >= drop; else SYSTEM_CHANGE if live_moved; else STABLE.\n",
+            brief="# K13, Drift attribution toy\n\nTime box: 2h.\n\nImplement `attr.py` with `verdict(base_kappa, cur_kappa, live_moved: bool, drop=0.1) -> str`:\nJUDGE_DRIFT if kappa dropped by >= drop; else SYSTEM_CHANGE if live_moved; else STABLE.\n",
             rubric="Judge drift beats system change when kappa falls.",
             starter_files={"attr.py": "def verdict(base_kappa, cur_kappa, live_moved, drop=0.1):\n    return 'STABLE'\n"},
             fail_files={"attr.py": "def verdict(base_kappa, cur_kappa, live_moved, drop=0.1):\n    return 'STABLE'\n"},
@@ -680,7 +680,7 @@ def _k09_k24() -> list[dict]:
             kid="K14",
             slug="journal-append-only",
             skills="- C5.S8\n- C1.S6",
-            brief="# K14 — Journal append-only\n\nTime box: 1h.\n\nProvide `JOURNAL.md` containing at least one tick block with lines for gates and decision.\n",
+            brief="# K14, Journal append-only\n\nTime box: 1h.\n\nProvide `JOURNAL.md` containing at least one tick block with lines for gates and decision.\n",
             rubric="Must include 'gates:' and 'decision:' markers.",
             starter_files={"JOURNAL.md": "# journal\n"},
             fail_files={"JOURNAL.md": "# empty\n"},
@@ -707,7 +707,7 @@ def _k09_k24() -> list[dict]:
             kid="K15",
             slug="cost-budget-cap",
             skills="- C5.S7\n- C7.S8",
-            brief="# K15 — Cost budget cap\n\nTime box: 1–2h.\n\nImplement `budget.py` with `within_budget(spent: float, cap: float) -> bool`.\n",
+            brief="# K15, Cost budget cap\n\nTime box: 1–2h.\n\nImplement `budget.py` with `within_budget(spent: float, cap: float) -> bool`.\n",
             rubric="spent <= cap -> True.",
             starter_files={"budget.py": "def within_budget(spent, cap):\n    return True\n"},
             fail_files={"budget.py": "def within_budget(spent, cap):\n    return True\n"},
@@ -740,7 +740,7 @@ def _k09_k24() -> list[dict]:
             kid="K16",
             slug="irreversible-checkpoint",
             skills="- C3.S8\n- C7.S1",
-            brief="# K16 — Irreversible checkpoint\n\nTime box: 1h.\n\nProvide `checkpoints.json` listing irreversible actions each with `name` and `human_required: true`.\nNeed at least two entries.\n",
+            brief="# K16, Irreversible checkpoint\n\nTime box: 1h.\n\nProvide `checkpoints.json` listing irreversible actions each with `name` and `human_required: true`.\nNeed at least two entries.\n",
             rubric="Every entry must require human.",
             starter_files={"checkpoints.json": "[]"},
             fail_files={
@@ -780,7 +780,7 @@ def _k09_k24() -> list[dict]:
             kid="K17",
             slug="rubric-vs-item",
             skills="- C6.S3",
-            brief="# K17 — Rubric vs item ambiguity\n\nTime box: 2h.\n\nImplement `cause.py` with `cause(item_ambiguous: bool, rubric_vague: bool) -> str` returning `item` | `rubric` | `both` | `neither`.\n",
+            brief="# K17: Rubric vs item ambiguity\n\nTime box: 2h.\n\nImplement `cause.py` with `cause(item_ambiguous: bool, rubric_vague: bool) -> str` returning `item` | `rubric` | `both`  | `neither`.\n",
             rubric="Priority: both > item > rubric > neither.",
             starter_files={"cause.py": "def cause(item_ambiguous, rubric_vague):\n    return 'neither'\n"},
             fail_files={"cause.py": "def cause(item_ambiguous, rubric_vague):\n    return 'neither'\n"},
@@ -827,7 +827,7 @@ def _k09_k24() -> list[dict]:
             kid="K18",
             slug="weighted-kappa-ordinal",
             skills="- C6.S4",
-            brief="# K18 — Weighted kappa (ordinal)\n\nTime box: 3h.\n\nImplement `weighted_kappa(y1, y2, weights='linear')` for ordinal labels 0..n. Linear weights. Perfect agreement -> 1.0.\n",
+            brief="# K18, Weighted kappa (ordinal)\n\nTime box: 3h.\n\nImplement `weighted_kappa(y1, y2, weights='linear')` for ordinal labels 0..n. Linear weights. Perfect agreement -> 1.0.\n",
             rubric="Use linear weights on sorted unique labels.",
             starter_files={"kappa.py": "def weighted_kappa(y1, y2, weights='linear'):\n    return 0.0\n"},
             fail_files={"kappa.py": "def weighted_kappa(y1, y2, weights='linear'):\n    return 0.0\n"},
@@ -881,7 +881,7 @@ def _k09_k24() -> list[dict]:
             kid="K19",
             slug="sentinel-gate-remap",
             skills="- C6.S6\n- C5.S6",
-            brief="# K19 — Sentinel gate remap\n\nTime box: 1–2h.\n\nImplement `remap(exit_code: int) -> int`: 0->0, 3(SYSTEM_CHANGE)->0, 2(JUDGE_DRIFT)->2, else 1.\n",
+            brief="# K19, Sentinel gate remap\n\nTime box: 1–2h.\n\nImplement `remap(exit_code: int) -> int`: 0->0, 3(SYSTEM_CHANGE)->0, 2(JUDGE_DRIFT)->2, else 1.\n",
             rubric="Only judge drift should redden a repair-first loop gate.",
             starter_files={"remap.py": "def remap(exit_code):\n    return exit_code\n"},
             fail_files={"remap.py": "def remap(exit_code):\n    return exit_code\n"},
@@ -923,7 +923,7 @@ def _k09_k24() -> list[dict]:
             kid="K20",
             slug="tick-policy-repair",
             skills="- C5.S6\n- C1.S5",
-            brief="# K20 — Tick policy repair-before-advance\n\nTime box: 2h.\n\nImplement `decide(gates: dict[str,bool], head: str) -> str` returning `repair:<gate>` if any gate False, else `advance:<head>`.\n",
+            brief="# K20, Tick policy repair-before-advance\n\nTime box: 2h.\n\nImplement `decide(gates: dict[str,bool], head: str) -> str` returning `repair:<gate>` if any gate False, else `advance:<head>`.\n",
             rubric="Any red gate blocks advance.",
             starter_files={"decide.py": "def decide(gates, head):\n    return 'advance:' + head\n"},
             fail_files={"decide.py": "def decide(gates, head):\n    return 'advance:' + head\n"},
@@ -962,7 +962,7 @@ def _k09_k24() -> list[dict]:
             kid="K21",
             slug="absolute-paths-aci",
             skills="- C3.S7",
-            brief="# K21 — Absolute paths ACI\n\nTime box: 1h.\n\nImplement `ok_path(p: str) -> bool` True only for absolute paths (POSIX `/` or Windows drive `C:\\\\`).\n",
+            brief="# K21, Absolute paths ACI\n\nTime box: 1h.\n\nImplement `ok_path(p: str) -> bool` True only for absolute paths (POSIX `/` or Windows drive `C:\\\\`).\n",
             rubric="Relative paths must be rejected.",
             starter_files={"paths.py": "def ok_path(p):\n    return True\n"},
             fail_files={"paths.py": "def ok_path(p):\n    return True\n"},
@@ -1005,7 +1005,7 @@ def _k09_k24() -> list[dict]:
             kid="K22",
             slug="offline-lexical-judge",
             skills="- C4.S5",
-            brief="# K22 — Offline lexical judge\n\nTime box: 2h.\n\nImplement `judge.py` with `pass_fail(answer, must_include: list[str]) -> str` returning pass if all needles appear in answer casefold else fail.\n",
+            brief="# K22, Offline lexical judge\n\nTime box: 2h.\n\nImplement `judge.py` with `pass_fail(answer, must_include: list[str]) -> str` returning pass if all needles appear in answer casefold else fail.\n",
             rubric="All required phrases must appear.",
             starter_files={"judge.py": "def pass_fail(answer, must_include):\n    return 'pass'\n"},
             fail_files={"judge.py": "def pass_fail(answer, must_include):\n    return 'pass'\n"},
@@ -1042,7 +1042,7 @@ def _k09_k24() -> list[dict]:
             kid="K23",
             slug="ci-workflow-assert",
             skills="- C7.S7\n- C1.S3",
-            brief="# K23 — CI workflow assert\n\nTime box: 1h.\n\nProvide `.github/workflows/ci.yml` that contains `jobs:` and `pytest` somewhere in the file.\n",
+            brief="# K23, CI workflow assert\n\nTime box: 1h.\n\nProvide `.github/workflows/ci.yml` that contains `jobs:` and `pytest` somewhere in the file.\n",
             rubric="Minimal CI file present.",
             starter_files={".github/workflows/ci.yml": "name: x\n"},
             fail_files={".github/workflows/ci.yml": "name: x\n"},
@@ -1069,7 +1069,7 @@ def _k09_k24() -> list[dict]:
             kid="K24",
             slug="composite-multi-failure",
             skills="- C7.S6\n- C7.S4\n- C7.S5",
-            brief="# K24 — Composite multi-failure\n\nTime box: 2h.\n\nImplement `detect.py` with `failures(events, forbidden, required) -> list[str]` returning any of `forbidden_tool`, `missing_tool` that apply.\n",
+            brief="# K24, Composite multi-failure\n\nTime box: 2h.\n\nImplement `detect.py` with `failures(events, forbidden, required) -> list[str]` returning any of `forbidden_tool`, `missing_tool` that apply.\n",
             rubric="Can return both labels in one run.",
             starter_files={"detect.py": "def failures(events, forbidden, required):\n    return []\n"},
             fail_files={"detect.py": "def failures(events, forbidden, required):\n    return []\n"},

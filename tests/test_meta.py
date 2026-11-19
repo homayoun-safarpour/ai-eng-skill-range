@@ -24,7 +24,7 @@ REQUIRED_FILES = [
 
 def test_skill_map_has_56_ids():
     text = MAP.read_text(encoding="utf-8")
-    # Cluster tables use "| C1.S1 | description |" — kata index may repeat a lone skill id.
+    # Cluster tables use "| C1.S1 | description  |": kata index may repeat a lone skill id.
     ids = re.findall(r"\| (C\d\.S\d) \|", text)
     assert len(set(ids)) == 56, f"expected 56 unique skills, got {len(set(ids))}"
     for c in range(1, 8):
