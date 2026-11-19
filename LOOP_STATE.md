@@ -1,4 +1,4 @@
-# ai-eng-skill-range — project backlog
+# ai-eng-skill-range: project backlog
 
 - [x] Scaffold package + CI
 - [x] Skill map 56
