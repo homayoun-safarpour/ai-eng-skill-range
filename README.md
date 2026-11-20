@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Progress](https://img.shields.io/badge/katas-24%2F24-green)
 
-Graded AI-engineering skill range: 56 skills, 24 katas, deterministic exit-code graders.
+AI engineering practice: 56 skills and 24 katas, each kata with a fixed grader that returns an exit code.
 
 skill-range is a set of 24 exercises (katas) in AI engineering, covering evaluation, retrieval, agent loops and reproducibility, and each kata has its own grader. We built it because a list of skills is easy to copy, and only a fixed grader shows whether a submission meets a stated rule. Given a kata and a folder of submitted files, the grader applies fixed rules, such as required headings, known metric values, file hashes or exit codes, and makes no network or model calls. It prints a PASS or FAIL line and returns exit 0 or 2, so that a reviewer or a CI job can run the same check.
 
@@ -27,6 +27,10 @@ FAIL: K01-loop-contract submission=katas/K01-loop-contract/fixtures/fail
 ```
 
 That command exits 2. The same kata on `katas/K01-loop-contract/fixtures/pass` exits 0.
+
+![ai-eng-skill-range: kata submission is checked by a fixed grader per kata; the result is FAIL with exit 2](docs/readme-flow.svg)
+
+[How it works](#how-it-works) · [Results](#what-each-result-means) · [Limits](#limits) · [Interview pack](docs/INTERVIEW.md) · [Cite](#citation) · Part of [a small open stack for checking AI agents and their judges](https://homayoun-safarpour.github.io)
 
 ## What each result means
 
