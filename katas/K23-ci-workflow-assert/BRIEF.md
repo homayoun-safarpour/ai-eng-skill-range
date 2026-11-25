@@ -2,7 +2,7 @@
 
 Time box: 1h.
 
-Provide `.github/workflows/ci.yml` that contains `jobs:` and `pytest` somewhere in the file.
+Provide `.github/workflows/ci.yml` with a `jobs:` key and a `run:` step under `steps:` that calls `pytest`. A mention of pytest in a comment or a name does not count.
 
 ## Common fail
 

@@ -1,0 +1,2 @@
+# we do not run pytest here
+jobs: {}
