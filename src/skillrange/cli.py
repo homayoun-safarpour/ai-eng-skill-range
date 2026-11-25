@@ -51,13 +51,22 @@ def load_grade_fn(kata_path: Path):
 
 
 def grade_kata(kata_id: str, submission: Path | None = None) -> int:
-    kata = find_kata(kata_id)
-    grade = load_grade_fn(kata)
+    try:
+        kata = find_kata(kata_id)
+    except FileNotFoundError:
+        print(f"FAIL: unknown kata: {kata_id}", file=sys.stderr)
+        return 2
     sub = submission if submission is not None else kata / "starter"
     if not sub.exists():
         print(f"FAIL: submission path missing: {sub}", file=sys.stderr)
         return 2
-    code = int(grade(Path(sub)))
+    try:
+        grade = load_grade_fn(kata)
+        code = int(grade(Path(sub)))
+    except Exception as exc:  # noqa: BLE001 - a grader error is a fail, never a pass or a crash
+        print(f"FAIL: grader error: {type(exc).__name__}: {exc}", file=sys.stderr)
+        print(f"FAIL: {kata.name} submission={Path(sub).as_posix()}")
+        return 2
     if code not in (0, 2):
         print(f"FAIL: grader returned {code}; only 0 or 2 allowed", file=sys.stderr)
         return 2

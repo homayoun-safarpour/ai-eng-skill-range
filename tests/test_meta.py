@@ -53,6 +53,7 @@ def test_golden_pass_and_fail_exit_codes():
             [sys.executable, "-m", "skillrange", "grade", kid, "--submission", str(path / "fixtures" / "fail")],
             cwd=ROOT,
             capture_output=True,
+            check=False,
             text=True,
         )
         assert fail.returncode == 2, f"{kid} fail fixture: {fail.stdout} {fail.stderr}"
@@ -60,6 +61,23 @@ def test_golden_pass_and_fail_exit_codes():
             [sys.executable, "-m", "skillrange", "grade", kid, "--submission", str(path / "fixtures" / "pass")],
             cwd=ROOT,
             capture_output=True,
+            check=False,
             text=True,
         )
         assert passed.returncode == 0, f"{kid} pass fixture: {passed.stdout} {passed.stderr}"
+
+
+def test_every_cheat_fixture_fails():
+    cheats = sorted(p for p in KATAS.glob("K*/fixtures/cheat*") if p.is_dir())
+    assert len(cheats) >= 6, f"expected cheat fixtures for the fixed graders, got {cheats}"
+    for path in cheats:
+        kid = path.parents[1].name.split("-", 1)[0]
+        run = subprocess.run(
+            [sys.executable, "-m", "skillrange", "grade", kid, "--submission", str(path)],
+            cwd=ROOT,
+            capture_output=True,
+            check=False,
+            text=True,
+            timeout=120,
+        )
+        assert run.returncode == 2, f"{kid} {path.name}: {run.stdout} {run.stderr}"

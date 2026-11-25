@@ -3,7 +3,8 @@
 Time box: 1–2h.
 
 Implement `gate.py` that reads `status.json` with key `ok` (bool).
-Print PASS/FAIL and exit 0 when ok is true, else exit 2.
+Print PASS/FAIL and exit 0 when ok is true, else exit 2. The grader writes its own
+`status.json` cases next to your `gate.py`; the one in your folder is not used.
 
 ## Common fail
 

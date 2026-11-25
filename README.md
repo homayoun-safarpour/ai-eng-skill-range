@@ -40,8 +40,10 @@ That command exits 2. The same kata on `katas/K01-loop-contract/fixtures/pass` e
 | `FAIL: <kata> submission=<path>` | 2 | At least one rule failed. Some graders print the reason first, as K01 does with the missing headings. |
 | `FAIL: submission path missing: <path>` | 2 | The `--submission` folder does not exist. |
 | `FAIL: grader returned <n>; only 0 or 2 allowed` | 2 | A grader returned another code, and the command counts that as a fail. |
+| `FAIL: unknown kata: <id>` | 2 | No kata matches the id given to `grade`. |
+| `FAIL: grader error: <error>` | 2 | The grader raised an error on the submission, for example on a file that is not valid JSON. It is printed before the `FAIL: <kata>` line. |
 
-A `PASS` shows that the submission meets the fixed rules of that one grader. It does not show that the work is good beyond those rules: the K01 grader checks that the five headings exist and does not read the text under them, so each kata's `rubric.md` states the rule a person still checks.
+A `PASS` shows that the submission meets the fixed rules of that one grader. It does not show that the work is good beyond those rules: the K01 grader checks that the five headings exist outside HTML comments and code blocks, each with some text under it, but it does not judge that text, so each kata's `rubric.md` states the rule a person still checks.
 
 ## Use this when
 
@@ -86,13 +88,14 @@ Each kata folder holds the same files, and `tests/test_meta.py` checks that they
 | `rubric.md` | The rule in plain words, including what a person checks |
 | `starter/` | The files to fill in |
 | `fixtures/pass`, `fixtures/fail` | A known pass and a known fail |
+| `fixtures/cheat*` (K01, K02, K04, K18, K23) | A known cheat that once passed and must now fail |
 | `grader/run.py` | `grade(submission: Path) -> int`, returning 0 or 2 |
 
 | Module | What it does |
 |---|---|
 | `skillrange.cli` | The `list` and `grade` commands; finds a kata, loads its grader and keeps the exit code to 0 or 2 |
 | `scripts/generate_katas.py` | Writes all 24 katas with their starters, graders, fixtures and briefs |
-| `tests/test_meta.py` | Checks the 56 skill ids, the 24 katas, their files, and exit 2 on every `fixtures/fail` and exit 0 on every `fixtures/pass` |
+| `tests/test_meta.py` | Checks the 56 skill ids, the 24 katas, their files, and exit 2 on every `fixtures/fail` and `fixtures/cheat*` and exit 0 on every `fixtures/pass` |
 
 Interview pack: [docs/INTERVIEW.md](docs/INTERVIEW.md), five talking points, each backed by a command. A short walk-through of K01 is in [examples/](examples/), and the claim limits are in [docs/RELIABILITY_CARD.md](docs/RELIABILITY_CARD.md).
 
@@ -107,11 +110,10 @@ All 24 katas in the index are in the repo. We add a new kata only when a skill t
 ## Limits
 
 - It is not a course or an agent framework. Each kata checks one narrow set of rules, and the skill map and skill tags are chosen by the author rather than measured.
-- A pass shows only what the grader checks. For example, K01 passes a `LOOP_CONTRACT.md` that has the five headings with nothing under them.
-- The graders of Python katas import and run the submitted code, and K02 runs the submitted `gate.py` as a process, so grade only code you trust.
+- A pass shows only what the grader checks. For example, K01 passes a `LOOP_CONTRACT.md` that has one word of any kind under each of the five headings.
+- The graders of Python katas import and run the submitted code, and K02 runs the submitted `gate.py` as a process (10 seconds at most per case), so grade only code you trust.
 - Some graders print only the `FAIL` line, without the reason.
-- An unknown kata id stops with a Python `FileNotFoundError` and exit 1, which is not a grader verdict.
-- It has no runtime dependencies and needs Python 3.10 or later. CI runs the tests on Python 3.10, 3.11 and 3.12. Named tests: `test_golden_pass_and_fail_exit_codes`, `test_skill_map_has_56_ids`, `test_twenty_four_katas_present`, `test_readme_stranger_grade_exits_2`.
+- It has no runtime dependencies and needs Python 3.10 or later. CI runs the tests on Python 3.10, 3.11 and 3.12. Named tests: `test_golden_pass_and_fail_exit_codes`, `test_skill_map_has_56_ids`, `test_twenty_four_katas_present`, `test_readme_stranger_grade_exits_2`, `test_every_cheat_fixture_fails`.
 
 ## Related tools
 
